@@ -1,0 +1,38 @@
+﻿<!--
+ Name: Shivam Janda
+ Date: December 12, 2022
+ Description: Details page of the Workout notes.
+-->
+@model Lab5Workout.Models.WorkoutNotes
+@using Microsoft.AspNetCore.Identity
+
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<h1>Details</h1>
+
+<div>
+    <h4>CaloriesBurned</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.exerciseID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.exerciseID.workoutID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.wID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

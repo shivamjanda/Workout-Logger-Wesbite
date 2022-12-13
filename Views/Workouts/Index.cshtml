@@ -1,0 +1,73 @@
+﻿<!--
+ Name: Shivam Janda
+ Date: December 12, 2022
+ Description: Create page of the Workout.
+-->
+@model IEnumerable<Lab5Workout.Models.Workout>
+@using Microsoft.AspNetCore.Identity
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.workoutID)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.workoutName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sets)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.reps)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.notes)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.workoutID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.workoutName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.reps)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.notes)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.workoutID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.workoutID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.workoutID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

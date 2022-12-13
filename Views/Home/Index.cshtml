@@ -1,0 +1,23 @@
+﻿<!--
+ Name: Shivam Janda
+ Date: December 12, 2022
+ Description: Home page of the website.
+-->
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!-- Using the site.css sheet-->
+<head>
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    <h1 class="display-4" style="text-align:center">Welcome to your Workout Logger Website</h1>
+    <p class="lead" style="text-align:center">
+        You can use this site to create a new workout and store it into a database! You can also checked the estimated calories burned from your workout!
+    </p>
+
+    <p class="lead" style="text-align:center">
+        <!-- Button to allow user to click it and go to the workouts page-->
+        <a asp-controller="Workouts" asp-action="Index" class="btn btn-lg btn-secondary">Enter</a>
+    </p>
+</body>

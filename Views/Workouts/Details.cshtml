@@ -1,0 +1,60 @@
+﻿<!--
+ Name: Shivam Janda
+ Date: December 12, 2022
+ Description: Create page of the Workout.
+-->
+@model Lab5Workout.Models.Workout
+@using Microsoft.AspNetCore.Identity
+
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+
+<body>
+    <h1>Details</h1>
+
+    <div>
+        <h4>Workout</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.workoutID)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.workoutID)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.workoutName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.workoutName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.sets)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.sets)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.reps)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.reps)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.notes)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.notes)
+            </dd>
+        </dl>
+    </div>
+
+</body>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.workoutID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

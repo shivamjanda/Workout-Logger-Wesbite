@@ -1,0 +1,47 @@
+﻿<!--
+ Name: Shivam Janda
+ Date: December 12, 2022
+ Description: Index page of the Workout notes.
+-->
+@model IEnumerable<Lab5Workout.Models.WorkoutNotes>
+@using Microsoft.AspNetCore.Identity
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.exerciseID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.exerciseID.workoutID)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
